@@ -44,9 +44,10 @@ h1 {
 }
 
 h2{
-    margin: 5px 0;
-    padding: 5px;
+    margin: 1em 0, .5em;
+    padding: 2em, .5em , .5em;
     font-size: 125%;
+    clear: both;
 }
 
 h3{
@@ -56,8 +57,8 @@ h3{
 }
 
 p {
-    margin: 5px 0;
-    padding: 5px;
+    margin: 1em 0;
+    padding: .1em;
 }
 
 blockquote {
@@ -84,8 +85,10 @@ cite {
 
 img{
     float: left;
-    margin: 5px 10px;
-    padding: 5px;
+    margin: 1em ,.5em;
+    padding: .5em;
+    
+     
 }
 
 :root {
