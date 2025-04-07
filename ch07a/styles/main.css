@@ -101,3 +101,57 @@ footer {
 		padding-bottom: 0; 
 	}
 }
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+	block-size: 100%;
+	
+	
+	padding: 0.5em 1em;
+	
+}
+
+nav ul li a:hover {
+	color: var(--accent-color);
+}
+nav {
+	background-color: var(--primary-color);
+	
+}
+
+nav ul {
+	list-style-type: none;
+	display: block;
+	flex-direction: column;
+	align-items: flex-start;
+	
+}
+
+nav ul li {
+	margin: 0.5em 0;
+}
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+
+nav ul li a.current-page {
+	color: var(--dark);
+	background-color: var(--accent-color);
+}
+
+nav ul li a.current-page:hover {
+	color: var(--dark);
+	background-color: var(--accent-color);
+	text-decoration: none;
+	font-style: normal;
+}
