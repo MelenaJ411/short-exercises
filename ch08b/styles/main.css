@@ -106,8 +106,40 @@ footer {
 	}
 }
 
+input[type="checkbox"] {
+	display: none;
+}
+
+input[type="checkbox"]:checked ~ .menu {
+	display: block;
+}
+
+input[type="checkbox"]:checked + .menu-btn::before {
+	content: "✖";
+}
+
+
+
+.menu-btn {
+	
+	
+	display: block;
+	background-color: var(--primary-color);
+	color: var(--light);
+	border: none;
+	padding: 0.5em 1em;
+	font-size: 1.2em;
+	cursor: pointer;
+	&::before {
+		content: "☰";
+		margin-right: 0.5em;
+	}
+}
 /* the styles for the navigation menu */
 .navbar {
+	clear: left;
+	position: relative;
+	
 	background-color: var(--primary-color);
 	& ul {
 		list-style-type: none;
@@ -129,29 +161,43 @@ footer {
 }
 
 .menu {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	display: none;
+	width: 20%;
+	position: absolute;
+	background-color: var(--primary-color);
+	left : 0;
+	top: 100%;
+	& small::after { 
+		content: "▶";
+		margin-left: .25em;
+	 }
 }
 
-.menu li:has(.submenu) {
-	position: relative;
-	& small {
-		margin-left: .25em; /* add space for arrow */
-	}
-	&:hover > .submenu {
-		display: block;
-	}
-}
+
+
 
 .submenu {
+	
 	position: absolute;
-	left: 0;
+	top : 40%;
+	left: 100%;
+	
 	background-color: var(--primary-color);
 	color: var(--light);
-	width: 175%;
 	display: none;
+	& > li a { margin: 2px; }
+	
+
+	
 }
+
+.menu li:hover .submenu {
+	display: block;
+	
+}
+
+
+
 
 /* the media query for the page */
 @media only screen and (min-width: 620px) {
@@ -171,3 +217,80 @@ footer {
 	}
 }
 
+@media (min-width: 784px) {
+
+	.navbar {
+		clear: left;
+		background-color: var(--primary-color);
+		position: relative;
+		& a {
+			
+			margin: 0 1px 2px;
+		}
+		& a:link, a:visited { 
+			color: var(--light);
+		}
+		& a:hover, a:focus, a.current {
+			
+			color: var(--accent-color);
+		}
+		& ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+		
+	}
+
+	.menu-btn {
+		display: none;
+		
+	}
+
+	.menu {
+		display: flex;
+		position: relative;
+		width : 100%;
+		& li { 
+			flex-basis: 20%; 
+			text-align: center;
+		}
+
+		& small::after { 
+			content: "▼";
+			margin-left: .25em;
+		 }
+	
+}
+
+
+	.submenu {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		background-color: var(--primary-color);
+		color: var(--light);
+		width: auto;
+		display: none;
+	}
+	
+	.menu li:hover .submenu {
+		display: block;
+		left: auto;
+		width: 20%;
+		top: 100%;
+	}
+	
+	input[type="checkbox"] {
+	display: none;
+}
+
+
+
+
+input[type="checkbox"]:checked ~ .menu {
+	display: flex;
+}
+
+}
+	
