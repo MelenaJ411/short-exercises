@@ -114,6 +114,8 @@ footer {
 
 /* the styles for the navigation menu */
 .navbar {
+	
+	
 	background-color: var(--primary-color);
 	& ul {
 		list-style-type: none;
@@ -132,10 +134,98 @@ footer {
 	& a.current:hover { 
 		font-style: normal; /* override hover effect */
 	}
+
+	container-type: inline-size;
+	
+}
+input[type="checkbox"] {
+	display: none;
+}
+
+input[type="checkbox"]:checked ~ .menu {
+	display: block;
+}
+
+input[type="checkbox"]:checked + .menu-btn::before {
+	content: "✖";
+}
+
+
+
+.menu-btn {
+	
+	display: block;
+	background-color: var(--primary-color);
+	color: var(--light);
+	border: none;
+	padding: 0.5em 1em;
+	font-size: 1.2em;
+	cursor: pointer;
+	&::before {
+		content: "☰";
+		margin-right: 0.5em;
+	}
 }
 
 .menu {
-	display: flex;
+	display: none;
 	flex-wrap: wrap;
+	position: absolute;
 	justify-content: space-evenly;
+	background-color: var(--primary-color);
 }
+
+
+@container (min-width: 560px) {
+
+	.navbar {
+		clear: left;
+		background-color: var(--primary-color);
+		position: relative;
+		& a {
+			
+			margin: 0 1px 2px;
+		}
+		& a:link, a:visited { 
+			color: var(--light);
+		}
+		& a:hover, a:focus, a.current {
+			
+			color: var(--accent-color);
+		}
+		& ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+		
+	}
+
+	.menu-btn {
+		display: none;
+		
+	}
+
+	.menu {
+		display: flex;
+		position: relative;
+		width : 100%;
+		& li { 
+			flex-basis: 20%; 
+			text-align: center;
+		}
+
+		& small::after { 
+			content: "▼";
+			margin-left: .25em;
+		 }
+	
+}
+
+input[type="checkbox"]:checked ~ .menu {
+	display: flex;
+	
+}
+
+}
+
