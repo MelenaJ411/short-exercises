@@ -68,6 +68,36 @@ section {
 	& h1 {
 		color: var(--primary-color);
 	}
+
+	& ul {
+		list-style-type: square;
+		margin-left: 1em;
+		padding-left: 1em;
+	}
+
+	& li {
+		margin-bottom: 1em;
+	}
+
+	& a {
+		color: var(--accent-color);	
+	}
+
+	& a:hover, a:focus {
+		color: var(--primary-color);
+		
+		text-decoration: none;
+	}
+
+	& .facebook {
+		color: var(--primary-color);
+		text-decoration: none;
+	}
+
+	& .facebook:hover, .facebook:focus {
+		font-style: italic;
+		font-weight: bold;
+		}
 }
 
 /* the styles for the article */
