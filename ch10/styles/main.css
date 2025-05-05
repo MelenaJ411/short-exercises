@@ -60,12 +60,17 @@ header {
 main {
 	clear: left;
 	display: flex;
+
+	a{
+		color: color-mix(in hsl, var(--accent-color) 65%, var(--primary-color) 35%);
+	}
 }
 
 /* the styles for the section */
 section {
 	flex-basis: 75%;
 	& h1 {
+		font-family: 'Ink Free';
 		padding-top: .5em;
 	}
 	& h2 {
@@ -80,6 +85,11 @@ section {
 		font-style: italic;
 		margin-left: 2em;
 	}
+
+	
+
+	
+	
 }
 
 /* the styles for the article */
@@ -115,3 +125,17 @@ footer {
 		padding-bottom: 0; 
 	}
 }
+
+/* the styles for the figure */
+figure {
+	float: left;
+	margin: 0 1em 1em 0;
+	width: auto;
+}
+
+figure img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
