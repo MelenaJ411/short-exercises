@@ -18,25 +18,95 @@
 		thead {
 			background-color: lightgreen;
 		}
+
+		tfoot {
+			background-color: lightgreen;
+			
+		}
 		th, td {
-			border: 1px solid black;
+			border-bottom: 1px solid black;
 			padding: .35em 1em .35em .5em;
 			text-align: left;
 			vertical-align: middle;
 		}
-		tbody tr:nth-child(even) td {
-			background-color: lightgrey;
-		}
+		
         tbody td:last-child {
             text-align: right;
         }
+
+		tfoot th:last-child {
+			text-align: right;
+		}
+
+		@media (max-width: 640px) {
+			table {
+				width: 100%;
+			}
+
+
+			th, td {
+				display: block;
+			}
+
+			thead {
+				display: none;
+			}
+			tbody th:first-child {
+				background-color: lightgreen;
+				font-weight: bold;
+			}
+
+			tbody td:nth-of-type(1) {
+				background-color: lightgray;
+				font-weight: bold;
+				text-align: left;
+			}
+
+			tbody td:nth-of-type(3)::before {
+				content: "Years of Service: ";
+				position: absolute;
+				left: 105px;
+				
+			}
+
+			
+
+			
+
+			tfoot th:nth-of-type(1){
+				display: none;
+			}
+			tfoot th:nth-of-type(2){
+				display: none;
+			}
+			tfoot th:nth-of-type(3){
+				display: none;
+			}
+
+			tfoot th:nth-of-type(4)::before {
+				content: "Total Years of Service: ";
+				position: absolute;
+				left: 105px;
+				
+			}
+
+
+			
+			
+		}
+
+
+
 	</style>
 </head>
 
 <body>
+<figure>
+<figcaption><h2>Employee table</h2></figcaption>
 <table>
 	<thead>
 		<tr>
+			<th>Department</th>
 			<th>Name</th>
 			<th>E-mail</th>
 			<th class="right">Years of Service</th>
@@ -44,6 +114,7 @@
 	</thead>
 	<tbody>
 		<tr>
+			<th rowspan = 3>Editorial</th>
 			<td>Joel Murach</td>
 			<td>joelmurach@yahoo.com</td>
 			<td>22</td>
@@ -59,6 +130,7 @@
 			<td>4</td>
 		</tr>
 		<tr>
+			<th rowspan = 2>Marketing</th>
 			<td>Judy Taylor</td>
 			<td>judy@murach.com</td>
 			<td>39</td>
@@ -69,6 +141,7 @@
 			<td>10</td>
 		</tr>
 		<tr>
+			<th rowspan = 2> Customer Service</th>
 			<td>Kelly Slivkoff</td>
 			<td>kelly@murach.com</td>
 			<td>25</td>
@@ -79,6 +152,12 @@
 			<td>1</td>
 		</tr>
 	</tbody>
+	<tfoot>
+		<tr>
+			<th></th><th></th><th>Total Years of Service</th> <th class = "right">105</th>
+		</tr>
+	</tfoot>
 </table>
+</figure>
 </body>
 </html>
