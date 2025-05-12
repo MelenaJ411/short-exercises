@@ -10,6 +10,44 @@
 <body>
 <h1>Please complete our survey</h1>
 <form action="confirmation.html" method="post">
+	<fieldset>
+		<legend>Contact Information</legend>
+		    <label for="email">E-Mail:</label>
+			<input type="email" name="email" id="email" autofocus required>
+
+			<label for="first_name">First Name:</label>
+			<input type="text" name="first_name" id="first_name" required>
+
+			<label for="last_name">Last Name:</label>
+			<input type="text" name="last_name" id="last_name" required>
+	</fieldset>
+
+	<fieldset>
+		<legend>Geographic Information</legend>
+			<label for = "state">State:</label>
+			<input type = "text" name = "state" id = "state" maxlength="2" placeholder="Two Characters" required>
+
+			<label for = "zip_code" >Zip Code:</label>
+			<input type="text" name="zip_code" id="zip_code" placeholder="Five digits" pattern="\d{5}" title="Please enter a 5-digit zip code" required>
+	</fieldset>
+
+	<fieldset>
+		<legend>Source</legend>
+			<label for = "question_1">How did you find out about us?</label>
+			<select name = "question_1" id = "question_1">
+				<option value = "search">Web Search</option>
+				<option value = "friend">Friend</option>
+				<option value = "other">Other</option>
+			</select>
+			<label for = "additional_comments">Additional Comments:</label>
+			<textarea name = "additional_comments" id = "additional_comments" rows = "5" cols = "40" placeholder="Add any additional comments here"></textarea>
+	</fieldset>
+
+	<div>
+		<button type="submit" class="btn btn-submit">Submit</button>
+		<button type="reset" class="btn btn-reset">Reset</button>
+	</div>
+			
     
 </form>
 </body>

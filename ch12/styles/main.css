@@ -33,3 +33,42 @@ input, select, button {
 label {
     display: block;
 }
+
+input:required:invalid {
+    border: 2px solid red;
+}
+
+input:required:valid {
+    border: 2px solid green;
+}
+
+.btn:hover {
+    cursor: pointer;
+
+}
+
+.btn {
+    width: 20%
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 .1em;
+}
+
+fieldset {
+    padding: .5em 1em .75em;
+    margin-bottom: 1em;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.btn-submit {
+    background-color: green;
+    color: white;
+}
+
+.btn-reset {
+    background-color: red;
+    color: white;
+}
